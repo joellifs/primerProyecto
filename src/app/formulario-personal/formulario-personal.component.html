@@ -1,0 +1,106 @@
+<h2 class="titulos">Formulario personal</h2>
+<label class="labelTexto" for="nombre"> Nombre </label>
+<input
+  [(ngModel)]="personaDatos.nombre"
+  type="text"
+  id="nombre"
+  class="distancia-15px"
+/>
+<br />
+<label class="labelTexto" for="apellido"> Apellido </label>
+<input
+  [(ngModel)]="personaDatos.apellido"
+  type="text"
+  id="apellido"
+  class="distancia-15px"
+/>
+<br />
+<label class="labelTexto" for="dni"> Dni </label>
+<input
+  [(ngModel)]="personaDatos.dni"
+  type="number"
+  id="dni"
+  class="distancia-15px"
+/>
+<br />
+<label class="labelTexto" for="edad"> Edad </label>
+<input
+  [(ngModel)]="personaDatos.edad"
+  type="number"
+  id="edad"
+  min="1"
+  max="120"
+  class="distancia-15px"
+/>
+<br />
+<label class="labelTexto" for="sexo"> Sexo </label>
+<br />
+<br />
+<label class="labelTexto" for="masculino"> Masculino </label>
+<input
+  [(ngModel)]="personaDatos.sexo"
+  type="radio"
+  id="masculino"
+  value="masculino"
+  class="distancia-15px"
+  name="genero"
+/>
+<label class="labelTexto" for="femenino"> Femenino </label>
+<input
+  [(ngModel)]="personaDatos.sexo"
+  type="radio"
+  id="femenino"
+  value="femenino"
+  name="genero"
+/>
+
+<br />
+<br />
+<label class="labelTexto" for="nde"> Nivel de educacion </label>
+<select
+  [(ngModel)]="personaDatos.nde"
+  name="nivel_de_estudio"
+  id="nde"
+  class="distancia-15px"
+>
+  <option value=" ">Seleccionar nivel de estudio</option>
+  <option value="primaria">Primaria</option>
+  <option value="secundaria">Secundaria</option>
+  <option value="universidad">Universidad</option>
+</select>
+<br />
+<br />
+<!-- <button
+  *ngIf="!enviado"
+  style="margin-left: 70px"
+  class="labelTexto"
+  (click)="enviarDatos()"
+>
+  Enviar
+</button> -->
+<button
+  [disabled]="enviado"
+  style="margin-left: 70px"
+  class="labelTexto"
+  (click)="enviarDatos()"
+>
+  Enviar
+</button>
+<br />
+<br />
+<!-- <pre>{{ arregloPersonas | json }}</pre> -->
+
+<!-- directiva: Nos permiten extender la funcionalidad del HTML -->
+<!-- *ngFor es una directiva que nos permite iterar en nuestro HTML -->
+<!-- en este caso genera tantos "div" como elementos tenga el "arregloPersona" -->
+<!-- "let persona of arregloPersonas" : persona es el nombre de la variable donde se va guardar el elemento que saco del arreglo. Esta variable puede tener cualquier nombre -->
+<!-- arregloPersonas: es el arreglo el cual contiene todos los registros de personas guardadas -->
+<div *ngFor="let persona of arregloPersonas">
+  <h4>Nombre: {{ persona.nombre }}</h4>
+  <h4>Apellido: {{ persona.apellido }}</h4>
+  <h4>Dni: {{ persona.dni }}</h4>
+  <h4>Edad: {{ persona.edad }}</h4>
+  <h4>Sexo: {{ persona.sexo }}</h4>
+  <h4>Nivel Estudio: {{ persona.nde }}</h4>
+  <br />
+</div>

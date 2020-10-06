@@ -1,0 +1,40 @@
+.avatar {
+  text-align: center;
+  border-radius: 50%;
+  background-image: url("avatar.png");
+  background-position: center;
+  background-size: cover;
+  height: 64px;
+  width: 64px;
+}
+.pantallaIngreso {
+  width: 500px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(44, 206, 166);
+}
+.etiquetas {
+  border: 5px solid grey;
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.etiquetas2 {
+  margin-left: 10px;
+}
+.boton {
+  font-weight: bold;
+}
+.botoncobrar {
+  font-weight: bold;
+  margin-left: 170px;
+}
+.derecha {
+  text-align: right;
+  margin-right: 10px;
+}
+.izquierda {
+  text-align: left;
+  margin-left: 10px;
+}

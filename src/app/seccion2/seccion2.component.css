@@ -1,0 +1,21 @@
+.estilo1 {
+  background-color: rgb(163, 246, 205);
+}
+.colorrojo {
+  color: #a00;
+  font-family: Verdana, Calibri, sans-serif;
+  font-size: 24px;
+}
+.colorazul {
+  color: blue;
+}
+.colorverde {
+  color: #060;
+}
+.estilo2 {
+  color: #fff;
+  background-color: #000;
+}
+.fuente {
+  font-size: 20px;
+}

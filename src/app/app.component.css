@@ -1,0 +1,14 @@
+.ancho-50 {
+  width: 50%;
+  margin-left: 50px;
+  background-color: lightgray;
+}
+.ancho100 {
+  width: 100%;
+}
+.ancho70 {
+  width: 70%;
+}
+.centrar {
+  text-align: center;
+}

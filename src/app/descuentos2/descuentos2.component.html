@@ -1,0 +1,49 @@
+<div class="pantallaIngreso">
+  <div>
+    <br />
+    <br />
+    <img class="avatar" src="avatar.png" />
+    <br />
+    <label>Usuario: {{ usuarioNuevo }} </label> <br />
+  </div>
+
+  <br />
+  <div class="etiquetas">
+    <div class="etiquetas2">
+      <br />
+      <label for="Precio">Precio: </label>
+      <input id="precioInicial" type="number" [(ngModel)]="precioInicial" />
+      <br />
+      <br />
+      <label>Forma de Pago: </label>
+      <input
+        type="radio"
+        id="efectivo"
+        name="pago"
+        value="efectivo"
+        [(ngModel)]="formaPago"
+      />
+      <label for="efectivo">Efectivo </label>
+      <input
+        type="radio"
+        id="tarjeta"
+        name="pago"
+        value="tarjeta"
+        [(ngModel)]="formaPago"
+      />
+      <label for="tarjeta">Tarjeta</label><br /><br />
+      <label for="Descuento"
+        >Descuento Aplicado: {{ descuentoAplicado }}
+      </label>
+      <div class="derecha">
+        <label>Total a Pagar: {{ totalApagar }}</label> <br />
+      </div>
+      <br />
+    </div>
+  </div>
+  <br />
+  <button class="boton">Atras</button>
+  <button class="botoncobrar" (click)="funCobrar()">Cobrar</button>
+  <br />
+  <br />
+</div>

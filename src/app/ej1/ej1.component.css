@@ -1,0 +1,20 @@
+.separacion {
+  margin-right: 10px;
+}
+.formulario {
+  width: 200px;
+  background-color: bisque;
+  text-align: center;
+  border: 5px solid black;
+}
+.boton {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border: 1px solid black;
+}
+.numeros {
+  margin-left: 2px;
+  text-align: left;
+  font-weight: bold;
+}

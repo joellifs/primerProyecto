@@ -1,0 +1,14 @@
+.pantallaIngreso {
+  text-align: center;
+  width: 300px;
+
+  background-color: rgb(44, 206, 166);
+}
+.etiquetas {
+  margin-right: 5px;
+  font-weight: bold;
+  color: white;
+}
+.boton {
+  font-weight: bold;
+}

@@ -1,0 +1,35 @@
+<div class="formulario">
+  <div class="numeros">
+    <label for="numero1" class="separacion">Numero 1</label>
+  </div>
+  <input type="number" id="numero1" [(ngModel)]="input1" />
+  <br />
+  <br />
+  <div class="numeros">
+    <label for="numero2" class="separacion">Numero 2</label>
+  </div>
+  <input type="number" id="numero2" [(ngModel)]="input2" />
+  <br />
+  <br />
+
+  <div>
+    <button class="boton" (click)="funSumar()">Sumar</button>
+  </div>
+  <br />
+  <br />
+  <h4 *ngIf="clickSuma">resultado: {{ suma }}</h4>
+  <br />
+  <br />
+  <button class="boton" (click)="funMostrar()">Mostrar</button>
+</div>
+
+<br />
+<br />
+<div *ngIf="clickMostrar">
+  <span>[</span>
+  <span class="separacion" *ngFor="let suma of vectorDeSuma">
+    {{ suma }} ,
+  </span>
+
+  <span>]</span>
+</div>

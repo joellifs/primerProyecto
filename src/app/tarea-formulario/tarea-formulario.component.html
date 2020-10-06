@@ -1,0 +1,46 @@
+<h1>Formulario Personal</h1>
+<br />
+<br />
+<label>Nombre</label>
+<input [(ngModel)]="personaObjeto.nombre" type="text" id="nombre" />
+<br />
+<label>Apellido</label>
+<input [(ngModel)]="personaObjeto.apellido" type="text" id="apellido" />
+<br />
+<label>DNI</label>
+<input [(ngModel)]="personaObjeto.dni" type="number" id="dni" />
+<br />
+<label>Edad</label>
+<input [(ngModel)]="personaObjeto.edad" type="number" id="edad" />
+<br />
+<label for="sexo">Sexo</label> <input />
+<br />
+<br />
+<label for="sexo">Masculino</label>
+<input
+  [(ngModel)]="personaObjeto.sexo"
+  type="radio"
+  id="masculino"
+  value="masculino"
+  name="genero"
+/>
+<br />
+<label for="sexo">Feminino</label
+><input
+  [(ngModel)]="personaObjeto.sexo"
+  type="radio"
+  id="femenino"
+  value="femenino"
+  name="genero"
+/>
+<br />
+<label for="nivelEdu">Nivel de Educación</label>
+<select name="nivel_edu" id="nivelEdu">
+  <option value="">Seleccionar Nivel</option>
+  <option value="primaria">Primaria</option>
+  <option value="secundaria">Secundaria</option>
+  <option value="universidad">Universidad</option>
+</select>
+<br />
+<br />
+<button>Enviar</button>

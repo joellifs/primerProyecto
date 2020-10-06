@@ -1,0 +1,25 @@
+<div class="pantallaIngreso">
+  <br />
+  <br />
+  <img class="avatar" src="avatar.png" />
+  <br />
+  <br />
+  <div class="etiquetas">
+    <label for="usuario1">Usuario</label> <br />
+    <input type="text" id="usuario1" [(ngModel)]="usuario" />
+    <br />
+    <br />
+    <label for="contrasenia1">Contraseña</label> <br />
+    <input type="password" id="contrasenia1" [(ngModel)]="contrasenia" />
+    <br />
+    <br />
+    <button class="boton" (click)="funIngresar()">Ingresar</button>
+    <h4 *ngIf="validar">{{ mensaje }}</h4>
+    <br />
+    <br />
+    <br />
+  </div>
+</div>
+<br />
+<br />
+<app-descuentos3 [usuarioIngreso]="usuario"></app-descuentos3>
