@@ -13,6 +13,9 @@ import { Ej1Component } from './ej1/ej1.component';
 import { DescuentosComponent } from './descuentos/descuentos.component';
 import { Descuentos2Component } from './descuentos2/descuentos2.component';
 import { Descuentos3Component } from './descuentos3/descuentos3.component';
+import { FormularioComponent } from './formulario/formulario.component';
+import { VistaComponent } from './vista/vista.component';
+import { TareaComponent } from './tarea/tarea.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { Descuentos3Component } from './descuentos3/descuentos3.component';
     DescuentosComponent,
     Descuentos2Component,
     Descuentos3Component,
+    FormularioComponent,
+    VistaComponent,
+    TareaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

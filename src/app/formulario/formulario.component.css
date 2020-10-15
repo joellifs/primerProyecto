@@ -1,0 +1,13 @@
+.formulario {
+  background-color: lightgrey;
+  width: 200px;
+  border: double 2px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.ancho-100 {
+  width: 100%;
+}

@@ -1,0 +1,27 @@
+<h2>componente formulario (padre)</h2>
+<div class="ancho-100">
+  <div class="formulario">
+    <label for="nombre"> nombre: </label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" />
+    <br />
+    <br />
+    <label for="apellido"> apellido: </label>
+    <input type="text" id="apellido" name="apellido" [(ngModel)]="apellido" />
+    <br />
+    <br />
+    <label for="telefono"> telefono: </label>
+    <input type="number" id="telefono" name="telefono" [(ngModel)]="telefono" />
+  </div>
+  <button (click)="agregar()">agregar</button>
+
+  <app-vista
+    *ngFor="let elemento_arreglo of arregloTarjeta"
+    [nombre_entrada]="elemento_arreglo.nom"
+    [apellido_entrada]="elemento_arreglo.ape"
+    [telefono_entrada]="elemento_arreglo.tel"
+  >
+  </app-vista>
+</div>
+<!-- <div>
+  <app-tarea [nom]="nombre" [ap]="apellido" [tel]="telefono"> </app-tarea>
+</div> -->
