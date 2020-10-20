@@ -11,7 +11,8 @@ export class FormularioComponent implements OnInit {
   telefono: number = 0;
   aparece: boolean = false;
   arregloTarjeta: any[] = [];
-  arregloNumeros: number[] = [0,1,2,3,4,5,6,7,8,9];
+  arregloNumeros: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  arregloNuevo: string[] = ['Joel', 'Joaquin', 'Isa'];
   constructor() {}
 
   ngOnInit(): void {}
@@ -28,5 +29,4 @@ export class FormularioComponent implements OnInit {
     this.arregloTarjeta.push(tarjeta);
     console.log(this.arregloTarjeta);
   }
-
 }

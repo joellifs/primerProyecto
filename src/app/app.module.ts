@@ -16,7 +16,8 @@ import { Descuentos3Component } from './descuentos3/descuentos3.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { VistaComponent } from './vista/vista.component';
 import { TareaComponent } from './tarea/tarea.component';
-
+//Libreria importada flexLayout https://github.com/angular/flex-layout
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,7 @@ import { TareaComponent } from './tarea/tarea.component';
     VistaComponent,
     TareaComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, FlexLayoutModule],
   providers: [],
   bootstrap: [AppComponent],
 })
