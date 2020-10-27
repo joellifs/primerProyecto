@@ -1,0 +1,13 @@
+.tarjetaPeli {
+  background-color: rgb(213, 228, 200);
+  border: 2px black outset;
+  text-align: center;
+
+  font-style: italic;
+  margin-top: 30px;
+  width: 150px;
+}
+
+.negrita {
+  font-weight: bold;
+}

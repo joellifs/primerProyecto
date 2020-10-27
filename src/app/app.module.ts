@@ -19,6 +19,7 @@ import { TareaComponent } from './tarea/tarea.component';
 //Libreria importada flexLayout https://github.com/angular/flex-layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PeliculaComponent } from './pelicula/pelicula.component';
+import { VistaPeliculaComponent } from './vista-pelicula/vista-pelicula.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { PeliculaComponent } from './pelicula/pelicula.component';
     VistaComponent,
     TareaComponent,
     PeliculaComponent,
+    VistaPeliculaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, FlexLayoutModule],
   providers: [],
