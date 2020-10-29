@@ -1,21 +1,34 @@
-<div class="formulario">
-  <label for="np">nombre:</label>
-  <input id="np" name="np" type="text" [(ngModel)]="nombre" />
-  <br />
-  <br />
-  <label for="genero">genero:</label>
-  <input id="genero" name="genero" type="text" [(ngModel)]="genero" />
-  <br />
-  <br />
-  <label for="anio">año:</label>
-  <input id="anio" name="anio" type="number" [(ngModel)]="anio" /><br />
-  <br />
-  <label for="imagen">imagen:</label>
-  <input id="imagen" name="imagen" type="text" [(ngModel)]="imagen" />
-  <br />
-  <br />
-  <button (click)="agregar()">Agregar</button>
-</div>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>nombre:</mat-label>
+    <input matInput   [(ngModel)]="nombre">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>genero:</mat-label>
+    <input matInput [(ngModel)]="genero">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>año:</mat-label>
+    <input matInput [(ngModel)]="anio">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>imagen:</mat-label>
+    <input matInput [(ngModel)]="imagen">
+  </mat-form-field>
+  <mat-form-field>
+    <button mat-raised-button color="primary" (click)="agregar()" >agregar</button>
+  </mat-form-field>
+ 
+</form>
+
+
+
+
+ 
+  
 
 <div fxLayout="row" fxLayoutAlign="space-between">
   <app-vista-pelicula
@@ -27,3 +40,6 @@
   >
   </app-vista-pelicula>
 </div>
+<br>
+
+
