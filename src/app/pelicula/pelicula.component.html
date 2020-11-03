@@ -1,38 +1,30 @@
 <form class="example-form">
-  <mat-form-field class="example-full-width">
+  <mat-form-field appearance="fill">
     <mat-label>nombre:</mat-label>
-    <input matInput   [(ngModel)]="nombre">
+    <input matInput [(ngModel)]="nombre" name="nombre" />
   </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <mat-label>genero:</mat-label>
-    <input matInput [(ngModel)]="genero">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <mat-label>año:</mat-label>
-    <input matInput [(ngModel)]="anio">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <mat-label>imagen:</mat-label>
-    <input matInput [(ngModel)]="imagen">
-  </mat-form-field>
+  <br />
   <mat-form-field>
-    <button mat-raised-button color="primary" (click)="agregar()" >agregar</button>
+    <mat-label>genero:</mat-label>
+    <input matInput [(ngModel)]="genero" name="genero" />
   </mat-form-field>
- 
+  <br />
+  <mat-form-field>
+    <mat-label>año:</mat-label>
+    <input matInput [(ngModel)]="anio" name="anio" />
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>imagen:</mat-label>
+    <input matInput [(ngModel)]="imagen" name="imagen" />
+  </mat-form-field>
+  <br />
+  <button mat-raised-button color="primary" (click)="agregar()">agregar</button>
 </form>
 
-
-
-
- 
-  
-
-<div fxLayout="row" fxLayoutAlign="space-between">
+<div fxLayout="column" *ngFor="let elemento_arreglo of vector_pelicula">
   <app-vista-pelicula
-    *ngFor="let elemento_arreglo of vector_pelicula"
+    class="separacion"
     [nombre_entrada]="elemento_arreglo.nom"
     [genero_entrada]="elemento_arreglo.gen"
     [anio_entrada]="elemento_arreglo.an"
@@ -40,6 +32,5 @@
   >
   </app-vista-pelicula>
 </div>
-<br>
 
-
+<br />

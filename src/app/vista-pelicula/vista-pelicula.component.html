@@ -1,4 +1,4 @@
-<div class="tarjetaPeli">
+<!-- <div class="tarjetaPeli">
   <img [src]="imagen_entrada" />
   <label><span class="negrita">Nombre:</span> {{ nombre_entrada }}</label>
   <br />
@@ -6,4 +6,14 @@
   <br />
   <label><span class="negrita">Año:</span> {{ anio_entrada }}</label>
   <br />
-</div>
+</div> -->
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ nombre_entrada }}</mat-card-title>
+    <mat-card-subtitle
+      >{{ genero_entrada }} , {{ anio_entrada }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="imagen_entrada" alt="imagen Pelicula" />
+</mat-card>

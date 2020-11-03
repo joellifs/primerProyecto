@@ -24,9 +24,10 @@ import { VistaPeliculaComponent } from './vista-pelicula/vista-pelicula.componen
 // modulos para angular material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,18 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     PeliculaComponent,
     VistaPeliculaComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, FlexLayoutModule, BrowserAnimationsModule, MatSliderModule, MatButtonModule, MatInputModule, MatFormFieldModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatCardModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
