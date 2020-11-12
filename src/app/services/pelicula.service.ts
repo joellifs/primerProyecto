@@ -12,4 +12,7 @@ export class PeliculaService {
     this.arreglo_pelicula = vector_dePelis;
     console.log('vector Pelicula desde el Servicio' + this.arreglo_pelicula);
   }
+  obtenerPeliculas(){
+    return this.arreglo_pelicula;
+  }
 }
