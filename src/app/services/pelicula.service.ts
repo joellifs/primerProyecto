@@ -8,11 +8,12 @@ export class PeliculaService {
   arreglo_pelicula: any[] = [];
 
   constructor() {}
-  cargarPeliculas(vector_dePelis: any[]) {
-    this.arreglo_pelicula = vector_dePelis;
-    console.log('vector Pelicula desde el Servicio' + this.arreglo_pelicula);
+  // recibe un objeto (pelicula) y lo guarda en el arreglo
+  cargarPeliculas(nuevo_objetoPeli: any) {
+    //guardar obejto en vector
+    this.arreglo_pelicula.push(nuevo_objetoPeli);
   }
-  obtenerPeliculas(){
+  obtenerPeliculas() {
     return this.arreglo_pelicula;
   }
 }

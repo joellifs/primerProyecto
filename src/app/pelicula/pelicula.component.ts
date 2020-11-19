@@ -11,7 +11,7 @@ export class PeliculaComponent implements OnInit {
   genero: string = '';
   anio: number = 0;
   imagen: string = '';
-  vector_pelicula: any[] = [];
+  // vector_pelicula: any[] = [];
 
   constructor(private peliculaService: PeliculaService) {}
 
@@ -24,9 +24,6 @@ export class PeliculaComponent implements OnInit {
       an: this.anio,
       imag: this.imagen,
     };
-    this.vector_pelicula.push(objeto_pelicula);
-    this.peliculaService.cargarPeliculas(this.vector_pelicula);
-
-    console.log('vector Pelicula desde el componente' + this.vector_pelicula);
+    this.peliculaService.cargarPeliculas(objeto_pelicula);
   }
 }

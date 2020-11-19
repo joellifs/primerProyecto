@@ -8,14 +8,18 @@
   <br />
 </div> -->
 
-<div fxLayout="column" *ngFor="let tarjeta_pelicula of vectorPelicula">
-<mat-card class="example-card">
-  <mat-card-header>
-    <mat-card-title>{{ tarjeta_pelicula.nom }}</mat-card-title>
-    <mat-card-subtitle
-      >{{tarjeta_pelicula.gen }} , {{tarjeta_pelicula.an}}
-    </mat-card-subtitle>
-  </mat-card-header>
- <img mat-card-image [src]="tarjeta_pelicula.imag" alt="imagen Pelicula" />
-</mat-card>
+<div
+  class="separacion"
+  fxLayout="column"
+  *ngFor="let tarjeta_pelicula of vectorPelicula"
+>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ tarjeta_pelicula.nom }}</mat-card-title>
+      <mat-card-subtitle
+        >{{ tarjeta_pelicula.gen }} , {{ tarjeta_pelicula.an }}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="tarjeta_pelicula.imag" alt="imagen Pelicula" />
+  </mat-card>
 </div>
