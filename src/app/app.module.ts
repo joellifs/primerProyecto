@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { Seccion1Component } from './seccion1/seccion1.component';
 import { Seccion2Component } from './seccion2/seccion2.component';
 import { Seccion3Component } from './seccion3/seccion3.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioPersonalComponent } from './formulario-personal/formulario-personal.component';
 import { TareaFormularioComponent } from './tarea-formulario/tarea-formulario.component';
 import { Ej1Component } from './ej1/ej1.component';
@@ -28,8 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -61,6 +60,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatFormFieldModule,
     MatCardModule,
     MatToolbarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

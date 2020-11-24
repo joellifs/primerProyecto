@@ -1,25 +1,35 @@
-<form class="example-form">
+<form class="example-form" [formGroup]="peliculaForms">
   <mat-form-field appearance="fill">
     <mat-label>nombre:</mat-label>
-    <input matInput [(ngModel)]="nombre" name="nombre" />
+    <input matInput formControlName="nombre" name="nombre" />
+    <mat-error>Complete el nombre</mat-error>
   </mat-form-field>
   <br />
   <mat-form-field>
     <mat-label>genero:</mat-label>
-    <input matInput [(ngModel)]="genero" name="genero" />
+    <input matInput formControlName="genero" name="genero" />
+    <mat-error>Complete el genero</mat-error>
   </mat-form-field>
   <br />
   <mat-form-field>
     <mat-label>año:</mat-label>
-    <input matInput [(ngModel)]="anio" name="anio" />
+    <input matInput formControlName="anio" name="anio" />
+    <mat-error>Complete el año</mat-error>
   </mat-form-field>
   <br />
   <mat-form-field>
     <mat-label>imagen:</mat-label>
-    <input matInput [(ngModel)]="imagen" name="imagen" />
+    <input matInput formControlName="imagen" name="imagen" />
   </mat-form-field>
   <br />
-  <button mat-raised-button color="primary" (click)="agregar()">agregar</button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="agregar()"
+    [disabled]="!peliculaForms.valid"
+  >
+    agregar
+  </button>
 </form>
 
 <!-- <div fxLayout="column" *ngFor="let elemento_arreglo of vector_pelicula">
