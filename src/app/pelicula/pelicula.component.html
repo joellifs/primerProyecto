@@ -1,4 +1,6 @@
-<form class="example-form" [formGroup]="peliculaForms">
+ <!-- [formGroup] aca ponemos el objeto que representa el formulario -->
+ <form class="example-form" [formGroup]="peliculaForms">
+  <!-- formControlName: con este atributo le decimos a que propiedad del objeto que creamos en el TS esta relacionado el input -->
   <mat-form-field appearance="fill">
     <mat-label>nombre:</mat-label>
     <input matInput formControlName="nombre" name="nombre" />
@@ -22,6 +24,9 @@
     <input matInput formControlName="imagen" name="imagen" />
   </mat-form-field>
   <br />
+  <!-- el atributo disabled hace que el boton se desactive cuando se cumpla una condicion (el valor del atributo)
+  en este caso el boton se desabilita cuando el formulario no es valido (!form.valid)
+  -->
   <button
     mat-raised-button
     color="primary"
@@ -29,6 +34,69 @@
     [disabled]="!peliculaForms.valid"
   >
     agregar
+  </button>
+</form>
+
+
+<form class="example-form" [formGroup]="pasajeroForms">
+ 
+  <mat-form-field appearance="fill">
+    <mat-label>nombre:</mat-label>
+    <input matInput formControlName="nombre" name="nombre" />
+    <mat-error>Complete el nombre</mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>apellido:</mat-label>
+    <input matInput formControlName="apellido" name="apellido" />
+    <mat-error>Complete el apellido</mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>dni:</mat-label>
+    <input matInput formControlName="dni" name="dni" />
+    <mat-error>Complete el dni</mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>mail:</mat-label>
+    <input matInput formControlName="mail" name="mail" />
+    <mat-error>Complete el mail</mat-error>
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <mat-label>edad:</mat-label>
+    <input matInput formControlName="edad" name="edad" />
+    <mat-error>Complete la edad</mat-error>
+  </mat-form-field>
+
+
+  <br />
+  
+  <mat-form-field>
+    <mat-label>telefono:</mat-label>
+    <input matInput formControlName="telefono" name="telefono" />
+    <mat-error>Complete el telefono</mat-error>
+  </mat-form-field>
+ <br />
+ 
+ <mat-form-field>
+  <mat-radio-group formControlName="genero" aria-label="Selecione una opcion">
+    <mat-radio-button value="masculino">Masculino</mat-radio-button>
+    <mat-radio-button value="femenino">Femenino</mat-radio-button>
+  </mat-radio-group>
+</mat-form-field>
+
+
+<br />
+  
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="agregarPasajero()"
+    [disabled]="!peliculaForms.valid"
+  >
+    agregarPasajero
   </button>
 </form>
 

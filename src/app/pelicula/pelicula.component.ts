@@ -16,6 +16,7 @@ export class PeliculaComponent implements OnInit {
 
   //Representa el formulario del Html
   peliculaForms: FormGroup;
+  pasajeroForms: FormGroup;
   //FormBilder = es un constructor para el FormGroup
   constructor(
     private peliculaService: PeliculaService,
@@ -30,8 +31,18 @@ export class PeliculaComponent implements OnInit {
       genero: ['', Validators.required],
       anio: ['', Validators.required],
       imagen: '',
-    });
-  }
+    });            
+    this.pasajeroForms = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      dni: ['', Validators.required],
+      mail: ['', Validators.required],
+      edad: ['', Validators.required],
+      telefono: ['', Validators.required],
+      genero: ['femenino', Validators.required],
+      fecha_de_nacimiento: ['', Validators.required],
+  });
+}
 
   agregar() {
     const objeto_pelicula = {
@@ -42,4 +53,8 @@ export class PeliculaComponent implements OnInit {
     };
     this.peliculaService.cargarPeliculas(objeto_pelicula);
   }
+agregarPasajero(){
+
+}
+
 }
