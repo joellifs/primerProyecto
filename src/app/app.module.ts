@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +30,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import { MAT_DATE_LOCALE } from "@angular/material";
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,8 +66,14 @@ import {MatRadioModule} from '@angular/material/radio';
     MatToolbarModule,
     ReactiveFormsModule,
     MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: "es-AR" },
+  { provide: LOCALE_ID, useValue: "es-AR" }
+],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

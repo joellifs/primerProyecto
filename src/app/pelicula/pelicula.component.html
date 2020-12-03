@@ -40,7 +40,7 @@
 
 <form class="example-form" [formGroup]="pasajeroForms">
  
-  <mat-form-field appearance="fill">
+  <mat-form-field >
     <mat-label>nombre:</mat-label>
     <input matInput formControlName="nombre" name="nombre" />
     <mat-error>Complete el nombre</mat-error>
@@ -80,21 +80,29 @@
   </mat-form-field>
  <br />
  
- <mat-form-field>
-  <mat-radio-group formControlName="genero" aria-label="Selecione una opcion">
-    <mat-radio-button value="masculino">Masculino</mat-radio-button>
-    <mat-radio-button value="femenino">Femenino</mat-radio-button>
-  </mat-radio-group>
+ <mat-form-field  >
+  <mat-select disableRipple formControlName="genero">
+    <mat-option value="">seleccione una opcion</mat-option>
+    <mat-option value="masculino">masculino</mat-option>
+    <mat-option value="femenino">femenino</mat-option>
+  </mat-select>
 </mat-form-field>
 
 
 <br />
+
+<mat-form-field >
+  <mat-label> seleccione la fecha</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="fecha_de_nacimiento">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
   
   <button
     mat-raised-button
     color="primary"
     (click)="agregarPasajero()"
-    [disabled]="!peliculaForms.valid"
+    [disabled]="!pasajeroForms.valid"
   >
     agregarPasajero
   </button>

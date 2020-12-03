@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculaService } from '../services/pelicula.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { generate } from 'rxjs';
 
 @Component({
   selector: 'app-pelicula',
@@ -39,7 +40,7 @@ export class PeliculaComponent implements OnInit {
       mail: ['', Validators.required],
       edad: ['', Validators.required],
       telefono: ['', Validators.required],
-      genero: ['femenino', Validators.required],
+      genero: ['', Validators.required],
       fecha_de_nacimiento: ['', Validators.required],
   });
 }
@@ -54,6 +55,17 @@ export class PeliculaComponent implements OnInit {
     this.peliculaService.cargarPeliculas(objeto_pelicula);
   }
 agregarPasajero(){
+  const objeto_pasajero = {
+    nom: this.pasajeroForms.value["nombre"],
+    ape: this.pasajeroForms.value["apellido"],
+    dni: this.pasajeroForms.value["dni"],
+    mail: this.pasajeroForms.value["mail"],
+    edad: this.pasajeroForms.value["edad"],
+    tel: this.pasajeroForms.value["telefono"],
+    gen: this.pasajeroForms.value["genero"],
+    fdn: this.pasajeroForms.value["fecha_de_nacimiento"],
+    }
+    console.log(objeto_pasajero)
 
 }
 
