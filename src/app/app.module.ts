@@ -33,7 +33,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
-import { MAT_DATE_LOCALE } from "@angular/material";
+import { MAT_DATE_LOCALE } from "@angular/material/core";
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,7 @@ import { MAT_DATE_LOCALE } from "@angular/material";
     TareaFormularioComponent,
     Ej1Component,
     DescuentosComponent,
-    Descuentos2Component,
+    Descuentos2Component, 
     Descuentos3Component,
     FormularioComponent,
     VistaComponent,
