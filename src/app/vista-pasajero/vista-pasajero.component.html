@@ -1,0 +1,29 @@
+<div
+  class="separacion"
+  fxLayout="column"
+  *ngFor="let tarjeta_pasajero of vectorPasajero"
+>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title
+        >{{ tarjeta_pasajero.nom }}, {{ tarjeta_pasajero.ape }}</mat-card-title
+      >
+      <mat-card-subtitle
+        >{{ tarjeta_pasajero.dni }} ,
+        <mat-card-content>
+          <p>
+            {{ tarjeta_pasajero.mail }}
+            <br />
+            {{ tarjeta_pasajero.edad }}
+            <br />
+            {{ tarjeta_pasajero.tel }}
+            <br />
+            {{ tarjeta_pasajero.gen }}
+            <br />
+            {{ tarjeta_pasajero.fdn | date: "d/M/yy" }}
+          </p>
+        </mat-card-content>
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>

@@ -4,6 +4,8 @@ import { PeliculaComponent } from './pelicula/pelicula.component';
 import { Seccion1Component } from './seccion1/seccion1.component';
 import { Seccion2Component } from './seccion2/seccion2.component';
 import { VistaPeliculaComponent } from './vista-pelicula/vista-pelicula.component';
+import { VistaPasajeroComponent } from './vista-pasajero/vista-pasajero.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -20,6 +22,10 @@ const routes: Routes = [
   {
     path: 'vistapelicula',
     component: VistaPeliculaComponent,
+  },
+  {
+    path: 'vistapasajero',
+    component: VistaPasajeroComponent,
   },
 ];
 

@@ -29,11 +29,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
-import { MAT_DATE_LOCALE } from "@angular/material/core";
+import { MatSelectModule } from '@angular/material/select';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { VistaPasajeroComponent } from './vista-pasajero/vista-pasajero.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,13 +45,14 @@ import { MAT_DATE_LOCALE } from "@angular/material/core";
     TareaFormularioComponent,
     Ej1Component,
     DescuentosComponent,
-    Descuentos2Component, 
+    Descuentos2Component,
     Descuentos3Component,
     FormularioComponent,
     VistaComponent,
     TareaComponent,
     PeliculaComponent,
     VistaPeliculaComponent,
+    VistaPasajeroComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,9 +73,9 @@ import { MAT_DATE_LOCALE } from "@angular/material/core";
     MatSelectModule,
   ],
   providers: [
-    { provide: MAT_DATE_LOCALE, useValue: "es-AR" },
-  { provide: LOCALE_ID, useValue: "es-AR" }
-],
+    // { provide: MAT_DATE_LOCALE, useValue: 'es-AR' },
+    // { provide: LOCALE_ID, useValue: 'es-AR' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
