@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PasajeroService {
   arreglo_pasajero: any[] = [];
 
-
   constructor() {}
 
-cargarPasajero( objeto_pasajero: any ){
+  cargarPasajero(objeto_pasajero: any) {
     this.arreglo_pasajero.push(objeto_pasajero);
-}
-  retornoPasajero(){
+  }
+  retornoPasajero() {
     return this.arreglo_pasajero;
   }
 }

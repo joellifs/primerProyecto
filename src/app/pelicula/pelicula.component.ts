@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PeliculaService } from '../services/pelicula.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { generate } from 'rxjs';
-import { PasajeroService} from '../services/pasajero.service';
+import { PasajeroService } from '../services/pasajero.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-pelicula',
@@ -24,6 +25,7 @@ export class PeliculaComponent implements OnInit {
     private peliculaService: PeliculaService,
     private formBuilder: FormBuilder,
     private pasajeroService: PasajeroService,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -34,18 +36,18 @@ export class PeliculaComponent implements OnInit {
       genero: ['', Validators.required],
       anio: ['', Validators.required],
       imagen: '',
-    });            
+    });
     this.pasajeroForms = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       dni: ['', Validators.required],
-      mail: ['', [Validators.required, Validators.email] ],
-      edad: ['', [Validators.required, Validators.min(1), Validators.max(120)  ]],
+      mail: ['', [Validators.required, Validators.email]],
+      edad: ['', [Validators.required, Validators.min(1), Validators.max(120)]],
       telefono: ['', Validators.required],
       genero: ['', Validators.required],
       fecha_de_nacimiento: ['', Validators.required],
-  });
-}
+    });
+  }
 
   agregar() {
     const objeto_pelicula = {
@@ -56,20 +58,23 @@ export class PeliculaComponent implements OnInit {
     };
     this.peliculaService.cargarPeliculas(objeto_pelicula);
   }
-agregarPasajero(){
-  const objeto_pasajero = {
-    nom: this.pasajeroForms.value["nombre"],
-    ape: this.pasajeroForms.value["apellido"],
-    dni: this.pasajeroForms.value["dni"],
-    mail: this.pasajeroForms.value["mail"],
-    edad: this.pasajeroForms.value["edad"],
-    tel: this.pasajeroForms.value["telefono"],
-    gen: this.pasajeroForms.value["genero"],
-    fdn: this.pasajeroForms.value["fecha_de_nacimiento"],
-    }
+  agregarPasajero() {
+    const objeto_pasajero = {
+      nom: this.pasajeroForms.value['nombre'],
+      ape: this.pasajeroForms.value['apellido'],
+      dni: this.pasajeroForms.value['dni'],
+      mail: this.pasajeroForms.value['mail'],
+      edad: this.pasajeroForms.value['edad'],
+      tel: this.pasajeroForms.value['telefono'],
+      gen: this.pasajeroForms.value['genero'],
+      fdn: this.pasajeroForms.value['fecha_de_nacimiento'],
+    };
     this.pasajeroService.cargarPasajero(objeto_pasajero);
-
-
-}
-
+    // resetean valores del formulario
+    this.pasajeroForms.reset();
+    // Mostrar mensaje de pasajero agregado
+    this._snackBar.open('Pasajero Agregado Exitosamente', '', {
+      duration: 5000,
+    });
+  }
 }

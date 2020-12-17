@@ -8,9 +8,19 @@ import { PasajeroService } from '../services/pasajero.service';
 })
 export class VistaPasajeroComponent implements OnInit {
   vectorPasajero: any[] = [];
+  displayedColumns: string[] = [
+    'nombre',
+    'dni',
+    'edad',
+    'email',
+    'tel',
+    'gen',
+    'fdn',
+  ];
+
   constructor(private pasajeroService: PasajeroService) {}
 
   ngOnInit(): void {
-    this.vectorPasajero = this.pasajeroService.arreglo_pasajero;
+    this.vectorPasajero = this.pasajeroService.retornoPasajero();
   }
 }
