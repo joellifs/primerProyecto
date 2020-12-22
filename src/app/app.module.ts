@@ -37,6 +37,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { VistaPasajeroComponent } from './vista-pasajero/vista-pasajero.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSelectModule,
     MatTableModule,
     MatSnackBarModule,
+    HttpClientModule,
   ],
   providers: [
     // { provide: MAT_DATE_LOCALE, useValue: 'es-AR' },

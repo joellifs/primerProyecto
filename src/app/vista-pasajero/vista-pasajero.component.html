@@ -74,13 +74,14 @@
     <th mat-header-cell *matHeaderCellDef>Email</th>
     <td mat-cell *matCellDef="let tarjeta_pasajero">
       {{ tarjeta_pasajero.gen }}
-      <!--  Columna Fecha Nacimiento -->
-      <ng-container matColumnDef="fdn">
-        <th mat-header-cell *matHeaderCellDef>Fecha Nac.</th>
-        <td mat-cell *matCellDef="let tarjeta_pasajero">
-          {{ tarjeta_pasajero.fdn }}
-        </td>
-      </ng-container>
+    </td>
+  </ng-container>
+
+  <!--  Columna Fecha Nacimiento -->
+  <ng-container matColumnDef="fdn">
+    <th mat-header-cell *matHeaderCellDef>Fecha Nac.</th>
+    <td mat-cell *matCellDef="let tarjeta_pasajero">
+      {{ tarjeta_pasajero.fdn | date: "d/M/yy" }}
     </td>
   </ng-container>
 
