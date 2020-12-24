@@ -5,6 +5,7 @@ import { Seccion1Component } from './seccion1/seccion1.component';
 import { Seccion2Component } from './seccion2/seccion2.component';
 import { VistaPeliculaComponent } from './vista-pelicula/vista-pelicula.component';
 import { VistaPasajeroComponent } from './vista-pasajero/vista-pasajero.component';
+import { UsuarioComponent } from './usuario/usuario.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,13 @@ const routes: Routes = [
     path: 'vistapasajero',
     component: VistaPasajeroComponent,
   },
+  {
+    path: 'usuarios',
+    component: UsuarioComponent,
+  },
+
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

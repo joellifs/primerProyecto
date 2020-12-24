@@ -38,6 +38,7 @@ import { VistaPasajeroComponent } from './vista-pasajero/vista-pasajero.componen
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { UsuarioComponent } from './usuario/usuario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ import { HttpClientModule } from '@angular/common/http';
     PeliculaComponent,
     VistaPeliculaComponent,
     VistaPasajeroComponent,
+    UsuarioComponent,
   ],
   imports: [
     BrowserModule,
