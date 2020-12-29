@@ -6,11 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class PasajeroService {
   arreglo_pasajero: any[] = [];
 
-  constructor(private http: HttpClient) {
-    this.obtenerPasajeros().subscribe((datos) => {
-      console.log(datos);
-    });
-  }
+  constructor(private http: HttpClient) {}
 
   cargarPasajero(objeto_pasajero: any) {
     this.arreglo_pasajero.push(objeto_pasajero);
