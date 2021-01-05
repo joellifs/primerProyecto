@@ -18,4 +18,7 @@ export class PasajeroService {
   obtenerPasajeros() {
     return this.http.get('https://gorest.co.in/public-api/users');
   }
+  verPasajero(idPasajero: number) {
+    return this.http.get('https://gorest.co.in/public-api/users/' + idPasajero);
+  }
 }

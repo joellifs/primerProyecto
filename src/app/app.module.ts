@@ -39,6 +39,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioComponent } from './usuario/usuario.component';
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,3 +1,13 @@
+<div>
+  <input
+    matInput
+    [(ngModel)]="busqueda"
+    type="number"
+    placeholder="id del usuario"
+  />
+  <button (click)="buscarUsuario()">Buscar</button>
+</div>
+
 <!-- En el dataSource va el arreglo de donde queremos que saque los datos 
    Cada elemento que compone el arreglo representa una fila en mi tabla -->
 
@@ -13,6 +23,12 @@
     <th mat-header-cell *matHeaderCellDef>Nombre Completo</th>
     <!-- Dato que va ir en esta columna por cada fila  -->
     <td mat-cell *matCellDef="let usuario">{{ usuario.name }}</td>
+  </ng-container>
+
+  <!--  Columna ID  -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let usuario">{{ usuario.id }}</td>
   </ng-container>
 
   <!--  Columna Email  -->
