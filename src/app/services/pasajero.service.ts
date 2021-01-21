@@ -36,16 +36,25 @@ export class PasajeroService {
       headers: mi_header,
     };
 
-    // let pasajero = {
-    //   name: 'Joel',
-    //   gender: 'Male',
-    //   email: 'joel@joel.com',
-    //   status: 'Active',
-    // };
-
     return this.http.post(
       'https://gorest.co.in/public-api/users',
       objeto_usuario,
+      opciones_consulta
+    );
+  }
+
+  elimnarUsuario(idUsuario) {
+    let mi_header = new HttpHeaders({
+      Authorization: 'Bearer ' + this.token,
+    });
+
+    let opciones_consulta = {
+      headers: mi_header,
+    };
+
+    return this.http.delete(
+      'https://gorest.co.in/public-api/users/' + idUsuario,
+
       opciones_consulta
     );
   }

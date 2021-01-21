@@ -1,5 +1,5 @@
- <!-- [formGroup] aca ponemos el objeto que representa el formulario -->
- <form class="example-form" [formGroup]="peliculaForms">
+<!-- [formGroup] aca ponemos el objeto que representa el formulario -->
+<form class="example-form" [formGroup]="peliculaForms">
   <!-- formControlName: con este atributo le decimos a que propiedad del objeto que creamos en el TS esta relacionado el input -->
   <mat-form-field appearance="fill">
     <mat-label>nombre:</mat-label>
@@ -37,10 +37,8 @@
   </button>
 </form>
 
-
 <form class="example-form" [formGroup]="pasajeroForms">
- 
-  <mat-form-field >
+  <mat-form-field>
     <mat-label>nombre:</mat-label>
     <input matInput formControlName="nombre" name="nombre" />
     <mat-error>Complete el nombre</mat-error>
@@ -60,44 +58,53 @@
   <br />
   <mat-form-field>
     <mat-label>mail:</mat-label>
-    <input matInput formControlName="mail" name="mail"  />
+    <input matInput formControlName="mail" name="mail" />
     <mat-error>Complete el mail</mat-error>
   </mat-form-field>
-<br>
+  <br />
   <mat-form-field>
     <mat-label>edad:</mat-label>
-    <input matInput formControlName="edad" name="edad" type="number" min="1" max="120" />
+    <input
+      matInput
+      formControlName="edad"
+      name="edad"
+      type="number"
+      min="1"
+      max="120"
+    />
     <mat-error>Complete la edad</mat-error>
   </mat-form-field>
 
-
   <br />
-  
+
   <mat-form-field>
     <mat-label>telefono:</mat-label>
     <input matInput formControlName="telefono" name="telefono" />
     <mat-error>Complete el telefono</mat-error>
   </mat-form-field>
- <br />
- 
- <mat-form-field  >
-  <mat-select disableRipple formControlName="genero">
-    <mat-option value="">seleccione una opcion</mat-option>
-    <mat-option value="masculino">masculino</mat-option>
-    <mat-option value="femenino">femenino</mat-option>
-  </mat-select>
-</mat-form-field>
+  <br />
 
+  <mat-form-field>
+    <mat-select disableRipple formControlName="genero">
+      <mat-option value="">seleccione una opcion</mat-option>
+      <mat-option value="masculino">masculino</mat-option>
+      <mat-option value="femenino">femenino</mat-option>
+    </mat-select>
+  </mat-form-field>
 
-<br />
+  <br />
 
-<mat-form-field >
-  <mat-label> seleccione la fecha</mat-label>
-  <input matInput [matDatepicker]="picker" formControlName="fecha_de_nacimiento">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
-  
+  <mat-form-field>
+    <mat-label> seleccione la fecha</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      formControlName="fecha_de_nacimiento"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
   <button
     mat-raised-button
     color="primary"
@@ -108,6 +115,46 @@
   </button>
 </form>
 
+<form class="example-form" [formGroup]="usuarioForms">
+  <mat-form-field>
+    <mat-label>Nombre:</mat-label>
+    <input matInput formControlName="nombre" name="nombre" />
+    <mat-error>Complete el nombre</mat-error>
+  </mat-form-field>
+  <br />
+
+  <mat-form-field>
+    <mat-label>Email:</mat-label>
+    <input matInput formControlName="mail" name="mail" />
+    <mat-error>Complete el email</mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-select disableRipple formControlName="genero">
+      <mat-option value="">Seleccione una opcion</mat-option>
+      <mat-option value="Male">Masculino</mat-option>
+      <mat-option value="Female">Femenino</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br />
+  <br />
+  <mat-select disableRipple formControlName="status">
+    <mat-option value="">Seleccione una opcion</mat-option>
+    <mat-option value="Active">Activo</mat-option>
+    <mat-option value="Inactive">Inactivo</mat-option>
+  </mat-select>
+  <br />
+  <br />
+  <br />
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="agregarUsuario()"
+    [disabled]="!usuarioForms.valid"
+  >
+    agregarUsuario
+  </button>
+</form>
 <!-- <div fxLayout="column" *ngFor="let elemento_arreglo of vector_pelicula">
   <app-vista-pelicula
     class="separacion"
@@ -120,4 +167,3 @@
 </div>
 
 <br /> -->
-

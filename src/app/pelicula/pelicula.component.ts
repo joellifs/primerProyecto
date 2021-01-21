@@ -20,6 +20,7 @@ export class PeliculaComponent implements OnInit {
   //Representa el formulario del Html
   peliculaForms: FormGroup;
   pasajeroForms: FormGroup;
+  usuarioForms: FormGroup;
   //FormBilder = es un constructor para el FormGroup
   constructor(
     private peliculaService: PeliculaService,
@@ -47,6 +48,12 @@ export class PeliculaComponent implements OnInit {
       genero: ['', Validators.required],
       fecha_de_nacimiento: ['', Validators.required],
     });
+    this.usuarioForms = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      mail: ['', [Validators.required, Validators.email]],
+      genero: ['', Validators.required],
+      status: ['', Validators.required],
+    });
   }
 
   agregar() {
@@ -70,11 +77,40 @@ export class PeliculaComponent implements OnInit {
       fdn: this.pasajeroForms.value['fecha_de_nacimiento'],
     };
     this.pasajeroService.cargarPasajero(objeto_pasajero);
-    // resetean valores del formulario
-    this.pasajeroForms.reset();
-    // Mostrar mensaje de pasajero agregado
-    this._snackBar.open('Pasajero Agregado Exitosamente', '', {
+  }
+  mostrarMensaje(textoMensaje: string) {
+    this._snackBar.open(textoMensaje, '', {
       duration: 5000,
     });
+  }
+
+  agregarUsuario() {
+    // creamos un obejetos usuario con las mimas propiedades que el objeto usuario de la base de datos
+    const objeto_usuario = {
+      name: this.usuarioForms.value['nombre'],
+      email: this.usuarioForms.value['mail'],
+      gender: this.usuarioForms.value['genero'],
+      status: this.usuarioForms.value['status'],
+    };
+
+    this.pasajeroService
+      .guardarUsuario(objeto_usuario)
+      .subscribe((respuesta: any) => {
+        console.log(respuesta);
+        //Si la respuesta tiene codigo 201 ( guarado exitoso)entonces mostramos cartel
+        if (respuesta.code == 201) {
+          this.mostrarMensaje(
+            'Usuario Agregado Exitosamente' + respuesta.data.id
+          );
+        } else {
+          // en caso contrario se muestra que no es pobile y un mensaje de error
+          this.mostrarMensaje(
+            'No es posible guardar el usuario:  ' + respuesta.data[0].message
+          );
+        }
+      });
+
+    // resetean valores del formulario
+    this.usuarioForms.reset();
   }
 }

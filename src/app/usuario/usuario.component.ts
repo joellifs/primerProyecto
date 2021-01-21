@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ɵCodegenComponentFactoryResolver,
+} from '@angular/core';
 import { PasajeroService } from '../services/pasajero.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
@@ -24,17 +28,28 @@ export class UsuarioComponent implements OnInit {
       this.arregloUsuarios = respuesta.data;
     });
   }
+  mostrarMensaje(textoMensaje: string) {
+    this._snackBar.open(textoMensaje, '', {
+      duration: 5000,
+    });
+  }
   buscarUsuario() {
     this.pasajeroService
       .verPasajero(this.busqueda)
       .subscribe((respuesta: any) => {
-        this._snackBar.open(
-          'Nombre del pasajero es:  ' + respuesta.data.name,
-          '',
-          {
-            duration: 5000,
-          }
-        );
+        this.mostrarMensaje('Nombre del pasajero es:  ' + respuesta.data.name);
+      });
+  }
+
+  eliminarUsuario() {
+    this.pasajeroService
+      .elimnarUsuario(this.busqueda)
+      .subscribe((respuesta: any) => {
+        if (respuesta.code == 204) {
+          this.mostrarMensaje('El Usuario ' + this.busqueda + ' fue eliminado');
+        } else {
+          this.mostrarMensaje('Usuario no pudo ser eliminado');
+        }
       });
   }
 }
