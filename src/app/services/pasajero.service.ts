@@ -8,7 +8,8 @@ export class PasajeroService {
   // es una llave de acceso para la base de datos
   token: string =
     'f52435b9fc3e0d76f8135df5a24f6dfab51a48dda3f8ceee0b29f30010c9baa0';
-
+//definimos una variable http del tipo httpClient la cual nos 
+// permite hacer la consulta a la base de datos
   constructor(private http: HttpClient) {}
 
   cargarPasajero(objeto_pasajero: any) {

@@ -24,7 +24,9 @@ export class UsuarioComponent implements OnInit {
     //llamamos a la funcion obtener pasajeros y nos subscribimos a la respuesta
     //esto quiere decir que cuando llegue la respuesta se van ejecutar todas las lineas que aparecene despues de las flechas
 
-    this.pasajeroService.obtenerPasajeros().subscribe((respuesta: any) => {
+    this.pasajeroService
+    .obtenerPasajeros()
+    .subscribe((respuesta: any) => {
       this.arregloUsuarios = respuesta.data;
     });
   }
