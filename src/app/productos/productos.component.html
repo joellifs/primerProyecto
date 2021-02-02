@@ -1,38 +1,40 @@
+<div>
+  <input
+    matInput
+    [(ngModel)]="busqueda"
+    type="number"
+    placeholder="id del Productos"
+  />
+  <button (click)="buscarProductos()">Buscar</button>
+  <button (click)="eliminarProductos()">Eliminar</button>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br />
+<br />
 <div
   class="separacion"
   fxLayout="column"
   *ngFor="let tarjeta_producto of arregloProductos"
 >
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>{{ tarjeta_producto.name }}</mat-card-title>
-      <mat-card-subtitle
-        >{{ tarjeta_producto.id }} , {{ tarjeta_producto.description }} , {{ tarjeta_producto.price }}
-      </mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="tarjeta_producto.image" alt="imagen Productos" width="100px" height="100px" />
-  </mat-card>
+  <br />
+  <br />
+  <div>
+    <br />
+    <mat-card class="example-card" class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ tarjeta_producto.name }}</mat-card-title>
+        <mat-card-subtitle
+          >{{ tarjeta_producto.id }} , {{ tarjeta_producto.description }} ,
+          {{ tarjeta_producto.price }}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <div fxLayout="row" fxLayoutAlign="center">
+        <img
+          class="imagen"
+          [src]="tarjeta_producto.image"
+          alt="imagen Productos"
+        />
+      </div>
+    </mat-card>
+  </div>
 </div>
-
