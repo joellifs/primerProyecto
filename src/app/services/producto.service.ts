@@ -32,4 +32,19 @@ export class ProductoService {
       opciones_consulta
     );
   }
+  guardarProducto(objeto_producto) {
+    let mi_header = new HttpHeaders({
+      Authorization: 'Bearer ' + this.token,
+    });
+
+    let opciones_consulta = {
+      headers: mi_header,
+    };
+
+    return this.http.post(
+      'https://gorest.co.in/public-api/products',
+      objeto_producto,
+      opciones_consulta
+    );
+  }
 }

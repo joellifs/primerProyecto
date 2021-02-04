@@ -33,7 +33,7 @@
     (click)="agregar()"
     [disabled]="!peliculaForms.valid"
   >
-    agregar
+    Agregar
   </button>
 </form>
 
@@ -111,7 +111,7 @@
     (click)="agregarPasajero()"
     [disabled]="!pasajeroForms.valid"
   >
-    agregarPasajero
+    Agregar Pasajero
   </button>
 </form>
 
@@ -152,10 +152,53 @@
     (click)="agregarUsuario()"
     [disabled]="!usuarioForms.valid"
   >
-    agregarUsuario
+    Agregar Usuario
   </button>
 </form>
-<!-- <div fxLayout="column" *ngFor="let elemento_arreglo of vector_pelicula">
+<br />
+<br />
+
+<!-- Empieza Formulario de producto -->
+<form class="example-form" [formGroup]="productoForms">
+  <mat-form-field appearance="fill">
+    <mat-label>producto:</mat-label>
+    <input matInput formControlName="nombreP" name="nombreP" />
+    <mat-error>Nombre del producto </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>descripción :</mat-label>
+    <input matInput formControlName="descriptionP" name="descriptionP" />
+    <mat-error>Descripcion del producto </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>precio :</mat-label>
+    <input matInput formControlName="precioP" name="precioP" />
+    <mat-error>Precio del producto </mat-error>
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <mat-label>imagen:</mat-label>
+    <input matInput formControlName="imageP" name="imageP" />
+  </mat-form-field>
+  <br />
+  <mat-select disableRipple formControlName="status">
+    <mat-option value="">Seleccione una opcion</mat-option>
+    <mat-option value="Active">Activo</mat-option>
+    <mat-option value="Inactive">Inactivo</mat-option>
+  </mat-select>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="agregarProducto()"
+    [disabled]="!productoForms.valid"
+  >
+    Agregar Producto
+  </button>
+
+  <!-- <div fxLayout="column" *ngFor="let elemento_arreglo of vector_pelicula">
   <app-vista-pelicula
     class="separacion"
     [nombre_entrada]="elemento_arreglo.nom"
@@ -164,6 +207,7 @@
     [imagen_entrada]="elemento_arreglo.imag"
   >
   </app-vista-pelicula>
-</div>
+  </div>
 
-<br /> -->
+  -->
+</form>

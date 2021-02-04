@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { generate } from 'rxjs';
 import { PasajeroService } from '../services/pasajero.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ProductoService } from '../services/producto.service';
 
 @Component({
   selector: 'app-pelicula',
@@ -21,12 +22,14 @@ export class PeliculaComponent implements OnInit {
   peliculaForms: FormGroup;
   pasajeroForms: FormGroup;
   usuarioForms: FormGroup;
+  productoForms: FormGroup;
   //FormBilder = es un constructor para el FormGroup
   constructor(
     private peliculaService: PeliculaService,
     private formBuilder: FormBuilder,
     private pasajeroService: PasajeroService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private productoService: ProductoService
   ) {}
 
   ngOnInit(): void {
@@ -52,6 +55,13 @@ export class PeliculaComponent implements OnInit {
       nombre: ['', Validators.required],
       mail: ['', [Validators.required, Validators.email]],
       genero: ['', Validators.required],
+      status: ['', Validators.required],
+    });
+    this.productoForms = this.formBuilder.group({
+      nombreP: ['', Validators.required],
+      descriptionP: ['', Validators.required],
+      imageP: '',
+      precioP: ['', Validators.required],
       status: ['', Validators.required],
     });
   }
@@ -112,5 +122,33 @@ export class PeliculaComponent implements OnInit {
 
     // resetean valores del formulario
     this.usuarioForms.reset();
+  }
+  agregarProducto() {
+    const objeto_producto = {
+      name: this.productoForms.value['nombreP'],
+      description: this.productoForms.value['descriptionP'],
+      image: this.productoForms.value['imageP'],
+      price: this.productoForms.value['precioP'],
+      status: this.productoForms.value['status'],
+    };
+    this.productoService
+      .guardarProducto(objeto_producto)
+      .subscribe((respuesta: any) => {
+        console.log(respuesta);
+
+        if (respuesta.code == 201) {
+          this.mostrarMensaje(
+            'Producto ' + respuesta.data.id + ' fue agregado exitosamente'
+          );
+        } else {
+          // en caso contrario se muestra que no es pobile y un mensaje de error
+          this.mostrarMensaje(
+            'No es posible guardar el Producto:  ' + respuesta.data.id
+          );
+        }
+      });
+
+    // resetean valores del formulario
+    this.productoForms.reset();
   }
 }
