@@ -1,0 +1,8 @@
+Pasos a seguir para hacer un ABM (alta baja modificacion) de algo.
+1- crear un componente 
+2- crear un servicio (en caso de ser necesario)
+3- crear una ruta al nuevo componente creado
+4- agregar la ruta a la barra de navegacion 
+5- agregar funciones al servicio (GET,POST,DELETE,etc)
+6- conectar el componente al servicio
+7- editar el html del componente para mostrar informacion o capturar datos a traves de un formulario

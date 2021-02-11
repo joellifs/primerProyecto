@@ -40,6 +40,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { ProductosComponent } from './productos/productos.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { ProductosComponent } from './productos/productos.component';
     VistaPasajeroComponent,
     UsuarioComponent,
     ProductosComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,8 +6,8 @@ import { Seccion2Component } from './seccion2/seccion2.component';
 import { VistaPeliculaComponent } from './vista-pelicula/vista-pelicula.component';
 import { VistaPasajeroComponent } from './vista-pasajero/vista-pasajero.component';
 import { UsuarioComponent } from './usuario/usuario.component';
- 
-import { ProductosComponent } from './productos/productos.component';
+ import { ProductosComponent } from './productos/productos.component';
+ import {PostComponent} from "./post/post.component";
 const routes: Routes = [
   {
     path: '',
@@ -37,6 +37,10 @@ const routes: Routes = [
   path:"productos",
   component: ProductosComponent,
  },
+ {
+ path:"posteos",
+ component: PostComponent,
+},
 ];
 
 
